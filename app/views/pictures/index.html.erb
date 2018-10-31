@@ -6,7 +6,7 @@
 ----------------------------------------------------------------------------------------------------------------------
 <%= @pictures.each do |picture| %>
   <ul>
-    <l1><strong><%= picture.user.name %></strong></li>
+    <li><strong><%= picture.user.name %></strong></li>
     <li><%= picture.title %></li>
     <li><%= image_tag(picture.image.url) %></li>
     <li><%= picture.content %></li>
