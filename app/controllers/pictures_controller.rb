@@ -2,8 +2,6 @@ class PicturesController < ApplicationController
   before_action :set_picture, only:[:show, :update, :destroy, :edit]
   def index
     @pictures = Picture.all
-    # @favorite = current_user.favorites.find_by(picture_id: @picture.id)
-
   end
 
   def new
@@ -18,7 +16,6 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
     if @picture.save
-      CreateMailer.create_mail(@picture).deliver
       redirect_to pictures_path, notice: "投稿したよ！"
     else
       render 'new'
