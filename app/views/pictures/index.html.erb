@@ -1,8 +1,10 @@
 <h1>Time Line</h1>
 
-<p>    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %></p>
+<p>
+<% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+</p>
 ----------------------------------------------------------------------------------------------------------------------
 <%= @pictures.each do |picture| %>
   <ul>
@@ -17,7 +19,6 @@
     <%= link_to 'Edit', edit_picture_path(picture.id), data: {confirm: 'Are you sure？'} %>
     <%= link_to 'Dlete', picture_path(picture.id), method: :delete %>
   <% end %>
-
   <br>
 ---------------------------------------------------------------------------------------------------------------------
 <% end %>
