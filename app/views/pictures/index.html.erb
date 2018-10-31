@@ -5,20 +5,19 @@
    <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
 </p>
-----------------------------------------------------------------------------------------------------------------------
-<%= @pictures.each do |picture| %>
-  <ul>
-    <li><strong><%= picture.user.name %></strong></li>
-    <li><%= picture.title %></li>
+<% @pictures.each do |picture| %>
+<div class="box">
+  <ul class="list">
+    <li class="user-name"><strong><%= picture.user.name %></strong></li>
+    <li><h3><%= picture.title %></h3></li>
     <li><%= image_tag(picture.image.url) %></li>
     <li><%= picture.content %></li>
   </ul>
-
-  <%= link_to 'Detail', picture_path(picture.id) %>
+  <button type="button" class="btn btn-outline-info"><%= link_to 'Detail', picture_path(picture.id) %></button>
   <% if picture.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_picture_path(picture.id), data: {confirm: 'Are you sure？'} %>
-    <%= link_to 'Dlete', picture_path(picture.id), method: :delete %>
+    <button type="button" class="btn btn-outline-warning"><%= link_to 'Edit', edit_picture_path(picture.id), data: {confirm: 'Are you sure？'} %></button>
+    <button type="button" class="btn btn-outline-warning"><%= link_to 'Dlete', picture_path(picture.id), method: :delete %></button>
   <% end %>
   <br>
----------------------------------------------------------------------------------------------------------------------
+</div>
 <% end %>

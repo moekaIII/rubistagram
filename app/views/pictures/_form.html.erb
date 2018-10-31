@@ -23,7 +23,8 @@
   <div class="new-image">
     <%= form.label :image %>
     <%= image_tag(@picture.image.url) if @picture.image.url %>
-    <%= form.file_field :image %>  </div>
+    <%= form.file_field :image %>
+  </div>
 
   <%= form.submit %>
 <% end %>
