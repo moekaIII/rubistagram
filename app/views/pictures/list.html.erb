@@ -1,0 +1,31 @@
+<h1>Time Line</h1>
+
+<p>    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %></p>
+----------------------------------------------
+<%= @pictures.each do |picture| %>
+  <ul>
+    <l1><strong><%= picture.user.name %></strong></li>
+    <li><%= picture.title %></li>
+    <li><%= image_tag(picture.image.url) %></li>
+    <li><%= picture.content %></li>
+  </ul>
+
+  <%# unless picture.user_id == current_user.id %>
+    <%# if @favorite.present? %>
+      <%#= link_to '❤️', favorite_path(id: @favorite.ids), method: :delete %>
+    <%# else %>
+      <%#= link_to '💛', favorites_path(picture_id: picture.id), method: :post %>
+    <%# end %>
+  <%# end %>
+
+  <%= link_to 'Detail', picture_path(picture.id) %>
+
+  <% if picture.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_picture_path(picture.id), data: {confirm: 'Are you sure？'} %>
+  <% end %>
+<br>
+  ----------------------------------------------
+
+<% end %>

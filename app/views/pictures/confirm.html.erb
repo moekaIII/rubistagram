@@ -1,0 +1,10 @@
+<%= form_with(model: @picture, url:pictures_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :content %>
+
+  <p><%= @picture.title %></p>
+  <p><%= @picture.content %></p>
+  <p><%= image_tag(@picture.image.url) %></p><br>
+  <%= form.submit "登録" %>
+<% end %>
