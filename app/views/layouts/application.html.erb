@@ -11,14 +11,15 @@
 
   <body>
     <header>
+      <ul>
       <% if logged_in? %>
-        <%= link_to "Top", pictures_path %>
-        <%= link_to "New", new_picture_path %>
-        <%= link_to "Profile", user_path(current_user.id) %>
-        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+        <li><%= link_to "Top", pictures_path %></li>
+        <li><%= link_to "New", new_picture_path %></li>
+        <li><%= link_to "Profile", user_path(current_user.id) %></li>
+        <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
       <% else %>
-        <%= link_to "Sign up", new_user_path %>
-        <%= link_to "Login", new_session_path %>
+        <li><%= link_to "Sign up", new_user_path %></li>
+        <li><%= link_to "Login", new_session_path %></li>
       <% end %>
     </header>
     <section class="main-header">
