@@ -1,6 +1,8 @@
-<h1 id="user-img"><%= image_tag @user.image.url %><%= @user.name %>さんのページ</h1>
+<h1 id="show_user_img"><%= image_tag @user.image.url %><%= @user.name %>さんのページ</h1>
 
 <p>メールアドレス：<%= @user.email %><p>
+
+<%= link_to '編集', edit_user_path(@user.id) %>
 
   <h3>お気に入り一覧</h3>
 <% @favorite.each do |favorite| %>
