@@ -3,8 +3,3 @@
 <p>メールアドレス：<%= @user.email %><p>
 
 <%= link_to '編集', edit_user_path(@user.id) %>
-
-  <h3>お気に入り一覧</h3>
-<% @favorite.each do |favorite| %>
-      <p><%= favorite.picture.title %></p>
-<% end %>
