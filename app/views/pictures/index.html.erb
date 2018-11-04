@@ -8,7 +8,7 @@
 <% @pictures.each do |picture| %>
 <div class="box">
   <ul class="list">
-    <li class="user"><div id="user_img"><%= image_tag(picture.user.image.url) %></div><%= picture.user.name %></li>
+    <li class="user"><div id="user_img"><%= image_tag(picture.user.icon.url) %></div><%= picture.user.name %></li>
     <li><h3><%= picture.title %></h3></li>
     <li class="image"><%= image_tag(picture.image.url) %></li>
     <li><%= picture.content %></li>
