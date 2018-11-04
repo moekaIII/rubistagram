@@ -1,5 +1,12 @@
 
   <h3>お気に入り一覧</h3>
 <% @favorite.each do |favorite| %>
-      <p><%= favorite.picture.title %></p>
+<div class="box">
+  <ul class="list">
+      <li class="user"><div id="user_img"><%= image_tag(favorite.picture.user.icon.url) %></div><%= favorite.picture.user.name %></li>
+      <li><%= favorite.picture.title %></li>
+      <li><%= image_tag(favorite.picture.image.url) %></li>
+      <li><%= favorite.picture.content %></li>
+  </ul>
+</div>
 <% end %>
