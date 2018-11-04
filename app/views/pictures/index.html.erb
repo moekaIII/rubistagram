@@ -8,9 +8,9 @@
 <% @pictures.each do |picture| %>
 <div class="box">
   <ul class="list">
-    <li class="user-name"><strong><%= picture.user.name %></strong></li>
+    <li class="user"><div id="user-img"><%= image_tag(picture.user.image.url) %></div><%= picture.user.name %></li>
     <li><h3><%= picture.title %></h3></li>
-    <li><%= image_tag(picture.image.url) %></li>
+    <li class="image"><%= image_tag(picture.image.url) %></li>
     <li><%= picture.content %></li>
   </ul>
   <button type="button" class="btn btn-outline-info"><%= link_to 'Detail', picture_path(picture.id) %></button>
